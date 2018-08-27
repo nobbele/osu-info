@@ -45,17 +45,18 @@ namespace osu_info
             {
                 Android.App.AlertDialog.Builder aDialog;
                 aDialog = new Android.App.AlertDialog.Builder(this);
-                EditText editText = new EditText(this);
+                EditText usernamePopup = new EditText(this);
 
                 aDialog.SetTitle("Search For User");
-                aDialog.SetView(editText);
+                aDialog.SetView(usernamePopup);
                 aDialog.SetNegativeButton("Search!", delegate 
                 {
-                    if(editText.Text != string.Empty)
+                    if(usernamePopup.Text != string.Empty)
                     {
                         //Fill it up with required funtions
-                        Toast.MakeText(this, $"Searching for {editText.Text}", ToastLength.Short).Show();
+                        Toast.MakeText(this, $"Searching for {usernamePopup.Text}", ToastLength.Short).Show();
                         Intent profileActivity = new Intent(this, typeof(ProfileActivity));
+                        profileActivity.PutExtra("username", usernamePopup.Text);
                         StartActivity(profileActivity);
                     }
                     else

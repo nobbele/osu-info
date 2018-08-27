@@ -15,11 +15,14 @@ namespace osu_info
     [Activity(Label = "ProfileActivity")]
     public class ProfileActivity : Activity
     {
+        string username;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.content_main);
+
+            username = Intent.GetStringExtra("username");
         }
 
         public override void OnBackPressed()
