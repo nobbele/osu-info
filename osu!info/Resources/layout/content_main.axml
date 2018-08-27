@@ -16,7 +16,7 @@
 		android:layout_height="106.5dp"
 		android:id="@+id/scrollView1">
 		<LinearLayout
-			android:orientation="horizontal"
+			android:orientation="vertical"
 			android:minWidth="25px"
 			android:minHeight="25px"
 			android:layout_width="match_parent"
@@ -27,13 +27,24 @@
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
-				android:id="@+id/textUsername" />
+				android:id="@+id/textUsername"
+				android:layout_marginLeft="10.0dp"
+				android:layout_marginTop="6.0dp" />
+			<TextView
+				android:text="PP"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/textCurrentPP"
+				android:layout_marginLeft="10.0dp"
+				android:layout_marginTop="6.0dp" />
+
 		</LinearLayout>
 	</ScrollView>
 	<ImageView
 		android:src="@android:drawable/ic_menu_gallery"
 		android:layout_width="match_parent"
 		android:layout_height="105.5dp"
-		android:id="@+id/imageProfileImage" />
+		android:id="@+id/imageProfileImage"/>
 
 </LinearLayout>

@@ -8,6 +8,7 @@ using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
+using Android.Provider;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
@@ -17,22 +18,33 @@ namespace osu_info
     [Activity(Label = "ProfileActivity")]
     public class ProfileActivity : Activity
     {
+        //Important
         string username = string.Empty;
         string userID = string.Empty;
+        string userPP = string.Empty;
+
+        //Other
+        ImageView UserIcon;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.content_main);
 
-            username = Intent.GetStringExtra("username");
-
-            Org.Json.JSONObject userObj = OsuApi.Request("get_user", new Dictionary<string, string> { { "k", OsuApi.Key }, { "u", username }, { "type", "string" } }).GetJSONObject(0);
+            Org.Json.JSONObject userObj = OsuApi.Request("get_user", new Dictionary<string, string> { { "k", OsuApi.Key }, { "u", Intent.GetStringExtra("username") }, { "type", "string" } }).GetJSONObject(0);
 
             userID = userObj.GetString("user_id");
+            username = userObj.GetString("username");
+            userPP = userObj.GetString("pp_raw");
 
+            //Set user settings
             FindViewById<TextView>(Resource.Id.textUsername).Text = username;
-            FindViewById<ImageView>(Resource.Id.imageProfileImage).SetImageBitmap(GetImageBitmapFromUrl(userID));
+            FindViewById<TextView>(Resource.Id.textCurrentPP).Text = $"{userPP} pp";
+            UserIcon = FindViewById<ImageView>(Resource.Id.imageProfileImage);
+
+            //Others
+            UserIcon.SetImageBitmap(GetImageBitmapFromUrl(userID));
         }
 
         public static Bitmap GetImageBitmapFromUrl(string userID)
