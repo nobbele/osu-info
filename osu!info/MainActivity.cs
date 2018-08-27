@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -56,6 +57,8 @@ namespace osu_info
                     {
                         //Fill it up with required funtions
                         Toast.MakeText(this, $"Searching for {editText.Text}", ToastLength.Short).Show();
+                        Intent profileActivity = new Intent(this, typeof(ProfileActivity));
+                        StartActivity(profileActivity);
                     }
                     else
                     {
