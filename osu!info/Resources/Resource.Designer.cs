@@ -2528,8 +2528,8 @@ namespace osu_info
 			// aapt resource value: 0x7f080072
 			public const int expanded_menu = 2131230834;
 			
-			// aapt resource value: 0x7f08008c
-			public const int fab = 2131230860;
+			// aapt resource value: 0x7f08008d
+			public const int fab = 2131230861;
 			
 			// aapt resource value: 0x7f080050
 			public const int fill = 2131230800;
@@ -2567,8 +2567,8 @@ namespace osu_info
 			// aapt resource value: 0x7f08005f
 			public const int image = 2131230815;
 			
-			// aapt resource value: 0x7f08008d
-			public const int imageView1 = 2131230861;
+			// aapt resource value: 0x7f08008c
+			public const int imageView1 = 2131230860;
 			
 			// aapt resource value: 0x7f0800a9
 			public const int info = 2131230889;
@@ -3149,6 +3149,9 @@ namespace osu_info
 			
 			// aapt resource value: 0x7f030002
 			public const int ic_launcher_round = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int ic_Osu = 2130903043;
 			
 			static Mipmap()
 			{

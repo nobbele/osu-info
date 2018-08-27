@@ -26,8 +26,6 @@ namespace osu_info
 
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
-
-            OsuApi.Request("get_user", new Dictionary<string, string> { { "u", "nobbele" }, { "m", "0" }, { "type", "string" } });
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
