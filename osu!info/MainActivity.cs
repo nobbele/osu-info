@@ -19,6 +19,7 @@ namespace osu_info
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
+            //Toolbar
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
@@ -40,6 +41,32 @@ namespace osu_info
             if (id == Resource.Id.action_settings)
             {
                 return true;
+            }
+            if(id == Resource.Id.menu_profile)
+            {
+                Android.App.AlertDialog.Builder aDialog;
+                aDialog = new Android.App.AlertDialog.Builder(this);
+                EditText editText = new EditText(this);
+
+                aDialog.SetTitle("Search For User");
+                aDialog.SetView(editText);
+                aDialog.SetNegativeButton("Search!", delegate 
+                {
+                    if(editText.Text != string.Empty)
+                    {
+                        //Fill it up with required funtions
+                        Toast.MakeText(this, $"Searching for {editText.Text}", ToastLength.Short).Show();
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, $"You cant leave this part empty", ToastLength.Short).Show();
+                    }
+                });
+                aDialog.Show();
+            }
+            if (id == Resource.Id.menu_beatmaps)
+            {
+                //Put Functions Here
             }
 
             return base.OnOptionsItemSelected(item);

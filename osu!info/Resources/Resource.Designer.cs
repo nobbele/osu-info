@@ -2600,6 +2600,12 @@ namespace osu_info
 			// aapt resource value: 0x7f0800a1
 			public const int media_actions = 2131230881;
 			
+			// aapt resource value: 0x7f0800b3
+			public const int menu_beatmaps = 2131230899;
+			
+			// aapt resource value: 0x7f0800b2
+			public const int menu_profile = 2131230898;
+			
 			// aapt resource value: 0x7f0800ae
 			public const int message = 2131230894;
 			

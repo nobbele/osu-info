@@ -6,4 +6,14 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_profile"
+        android:title="Profile"
+        app:showAsAction="never"/>
+  <item
+      android:id="@+id/menu_beatmaps"
+      android:title="Beatmaps"
+      app:showAsAction="never"/>
+  
+  
 </menu>
