@@ -22,14 +22,30 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:id="@+id/linearLayout1">
-			<TextView
-				android:text="UserName"
-				android:textAppearance="?android:attr/textAppearanceMedium"
+			<LinearLayout
+				android:orientation="horizontal"
+				android:minWidth="25px"
+				android:minHeight="25px"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
-				android:id="@+id/textUsername"
-				android:layout_marginLeft="10.0dp"
-				android:layout_marginTop="6.0dp" />
+				android:id="@+id/linearLayout1">
+				<TextView
+					android:text="UserName"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="137.5dp"
+					android:layout_height="match_parent"
+					android:id="@+id/textUsername"
+					android:layout_marginLeft="10.0dp"
+					android:layout_marginTop="6.0dp"
+					android:textColor="#ff000000" />
+				<ImageView
+					android:src="@android:drawable/ic_menu_gallery"
+					android:layout_width="wrap_content"
+					android:layout_height="30.5dp"
+					android:id="@+id/imageCountry"
+					android:layout_marginTop="6.0dp" />
+				</LinearLayout>
+
 			<TextView
 				android:text="PP"
 				android:textAppearance="?android:attr/textAppearanceMedium"
@@ -38,13 +54,14 @@
 				android:id="@+id/textCurrentPP"
 				android:layout_marginLeft="10.0dp"
 				android:layout_marginTop="6.0dp" />
-
 		</LinearLayout>
 	</ScrollView>
 	<ImageView
 		android:src="@android:drawable/ic_menu_gallery"
 		android:layout_width="match_parent"
-		android:layout_height="105.5dp"
-		android:id="@+id/imageProfileImage"/>
+		android:layout_height="101.0dp"
+		android:id="@+id/imageProfileImage"
+		android:layout_marginTop="6.0dp"
+		android:layout_marginRight="10.0dp" />
 
 </LinearLayout>

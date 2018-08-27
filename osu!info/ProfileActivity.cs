@@ -21,10 +21,12 @@ namespace osu_info
         //Important
         string username = string.Empty;
         string userID = string.Empty;
-        string userPP = string.Empty;
+        string userCountry = string.Empty;
+        float userPP = 0;
 
         //Other
         ImageView UserIcon;
+        ImageView CountryIcon;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,24 +36,27 @@ namespace osu_info
 
             Org.Json.JSONObject userObj = OsuApi.Request("get_user", new Dictionary<string, string> { { "k", OsuApi.Key }, { "u", Intent.GetStringExtra("username") }, { "type", "string" } }).GetJSONObject(0);
 
-            userID = userObj.GetString("user_id");
             username = userObj.GetString("username");
-            userPP = userObj.GetString("pp_raw");
+            userID = userObj.GetString("user_id");
+            userCountry = userObj.GetString("country");
+            userPP = (int)Math.Round(float.Parse(userObj.GetString("pp_raw")));
 
             //Set user settings
             FindViewById<TextView>(Resource.Id.textUsername).Text = username;
             FindViewById<TextView>(Resource.Id.textCurrentPP).Text = $"{userPP} pp";
             UserIcon = FindViewById<ImageView>(Resource.Id.imageProfileImage);
+            CountryIcon = FindViewById<ImageView>(Resource.Id.imageCountry);
 
             //Others
-            UserIcon.SetImageBitmap(GetImageBitmapFromUrl(userID));
+            UserIcon.SetImageBitmap(GetImageBitmapFromUrl($"https://a.ppy.sh/{userID}"));
+            CountryIcon.SetImageBitmap(GetImageBitmapFromUrl($"https://osu.ppy.sh/images/flags/{userCountry}.png"));
         }
 
-        public static Bitmap GetImageBitmapFromUrl(string userID)
+        public static Bitmap GetImageBitmapFromUrl(string url)
         {
             using (var webClient = new WebClient())
             {
-                var imageBytes = webClient.DownloadData($"https://a.ppy.sh/{userID}");
+                var imageBytes = webClient.DownloadData(url);
                 if (imageBytes != null && imageBytes.Length > 0)
                     return BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
             }
