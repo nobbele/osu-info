@@ -48,23 +48,13 @@ namespace osu_info
             CountryIcon = FindViewById<ImageView>(Resource.Id.imageCountry);
 
             //Others
-            UserIcon.SetImageBitmap(GetImageBitmapFromUrl($"https://a.ppy.sh/{userID}"));
-            CountryIcon.SetImageBitmap(GetImageBitmapFromUrl($"https://osu.ppy.sh/images/flags/{userCountry}.png"));
-        }
-
-        public static Bitmap GetImageBitmapFromUrl(string url)
-        {
-            using (var webClient = new WebClient())
-            {
-                var imageBytes = webClient.DownloadData(url);
-                if (imageBytes != null && imageBytes.Length > 0)
-                    return BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
-            }
-            return null;
+            UserIcon.SetImageBitmap(Helper.GetImageBitmapFromUrl($"https://a.ppy.sh/{userID}"));
+            CountryIcon.SetImageBitmap(Helper.GetImageBitmapFromUrl($"https://osu.ppy.sh/images/flags/{userCountry}.png"));
         }
 
         public override void OnBackPressed()
         {
+            Toast.MakeText(this, "Going back", ToastLength.Short).Show();
             this.Finish();
         }
     }
