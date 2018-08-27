@@ -15,20 +15,12 @@
 		android:layout_width="250.5dp"
 		android:layout_height="106.5dp"
 		android:id="@+id/scrollView1">
-		<LinearLayout
-			android:orientation="horizontal"
-			android:minWidth="25px"
-			android:minHeight="25px"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:id="@+id/linearLayout1"
 			<TextView
 				android:text="UserName"
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				android:id="@+id/textUsername" />
-		</LinearLayout>
 	</ScrollView>
 	<ImageView
 		android:src="@android:drawable/ic_menu_gallery"
