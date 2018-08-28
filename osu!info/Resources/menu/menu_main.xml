@@ -14,6 +14,10 @@
       android:id="@+id/menu_beatmaps"
       android:title="Beatmaps"
       app:showAsAction="never"/>
+  <item
+      android:id="@+id/menu_news"
+      android:title="Osu News"
+      app:showAsAction="never"/> 
   
   
 </menu>

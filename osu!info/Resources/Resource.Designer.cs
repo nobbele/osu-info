@@ -2612,6 +2612,9 @@ namespace osu_info
 			// aapt resource value: 0x7f0800b9
 			public const int menu_beatmaps = 2131230905;
 			
+			// aapt resource value: 0x7f0800ba
+			public const int menu_news = 2131230906;
+			
 			// aapt resource value: 0x7f0800b8
 			public const int menu_profile = 2131230904;
 			

@@ -19,8 +19,8 @@ namespace osu_info
     public class ProfileActivity : Activity
     {
         //Important
-        string username = string.Empty;
         string userID = string.Empty;
+        string username = string.Empty;
         string userCountry = string.Empty;
         float userPP = 0;
 
@@ -35,7 +35,7 @@ namespace osu_info
             SetContentView(Resource.Layout.content_main);
 
             Org.Json.JSONObject userObj = OsuApi.Request("get_user", new Dictionary<string, string> { { "k", OsuApi.Key }, { "u", Intent.GetStringExtra("username") }, { "type", "string" } }).GetJSONObject(0);
-
+    
             username = userObj.GetString("username");
             userID = userObj.GetString("user_id");
             userCountry = userObj.GetString("country");
