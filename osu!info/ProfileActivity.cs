@@ -36,6 +36,8 @@ namespace osu_info
 
             Org.Json.JSONObject userObj = OsuApi.Request("get_user", new Dictionary<string, string> { { "k", OsuApi.Key }, { "u", Intent.GetStringExtra("username") }, { "type", "string" } }).GetJSONObject(0);
     
+            //Make it so if the user name cannot be found return to profile with a Toast telling the error
+
             username = userObj.GetString("username");
             userID = userObj.GetString("user_id");
             userCountry = userObj.GetString("country");

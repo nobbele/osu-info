@@ -60,6 +60,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="OsuApi.cs" />
     <Compile Include="OsuApiKey.cs" />
+    <Compile Include="OsuTypes.cs" />
     <Compile Include="ProfileActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
