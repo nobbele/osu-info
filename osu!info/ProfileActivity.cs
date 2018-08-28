@@ -19,10 +19,7 @@ namespace osu_info
     public class ProfileActivity : Activity
     {
         //Important
-        string userID = string.Empty;
-        string username = string.Empty;
-        string userCountry = string.Empty;
-        float userPP = 0;
+        OsuUser user;
 
         //Other
         ImageView UserIcon;
@@ -34,24 +31,19 @@ namespace osu_info
 
             SetContentView(Resource.Layout.content_main);
 
-            Org.Json.JSONObject userObj = OsuApi.Request("get_user", new Dictionary<string, string> { { "k", OsuApi.Key }, { "u", Intent.GetStringExtra("username") }, { "type", "string" } }).GetJSONObject(0);
+            user = new OsuUser(Intent.GetStringExtra("username"), OsuUser.StringToGameMode(Intent.GetStringExtra("gamemode")));
     
             //Make it so if the user name cannot be found return to profile with a Toast telling the error
 
-            username = userObj.GetString("username");
-            userID = userObj.GetString("user_id");
-            userCountry = userObj.GetString("country");
-            userPP = (int)Math.Round(float.Parse(userObj.GetString("pp_raw")));
-
             //Set user settings
-            FindViewById<TextView>(Resource.Id.textUsername).Text = username;
-            FindViewById<TextView>(Resource.Id.textCurrentPP).Text = $"{userPP} pp";
+            FindViewById<TextView>(Resource.Id.textUsername).Text = user.Username;
+            FindViewById<TextView>(Resource.Id.textCurrentPP).Text = $"{user.PP} pp";
             UserIcon = FindViewById<ImageView>(Resource.Id.imageProfileImage);
             CountryIcon = FindViewById<ImageView>(Resource.Id.imageCountry);
 
             //Others
-            UserIcon.SetImageBitmap(Helper.GetImageBitmapFromUrl($"https://a.ppy.sh/{userID}"));
-            CountryIcon.SetImageBitmap(Helper.GetImageBitmapFromUrl($"https://osu.ppy.sh/images/flags/{userCountry}.png"));
+            UserIcon.SetImageBitmap(Helper.GetImageBitmapFromUrl($"https://a.ppy.sh/{user.ID}"));
+            CountryIcon.SetImageBitmap(Helper.GetImageBitmapFromUrl($"https://osu.ppy.sh/images/flags/{user.Country}.png"));
         }
 
         public override void OnBackPressed()

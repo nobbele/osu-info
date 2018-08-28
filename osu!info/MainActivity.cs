@@ -16,7 +16,7 @@ namespace osu_info
     public class MainActivity : AppCompatActivity
     {
 
-        ArrayList gameTypeList = new ArrayList { "osu!std", "osu!taiko", "osu!catch", "osu!mania" };
+        List<string> gameTypeList = new List<string> { "osu!", "osu!taiko", "osu!catch", "osu!mania" };
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -68,6 +68,7 @@ namespace osu_info
                         Toast.MakeText(this, $"Searching for \"{usernamePopup.Text}\" ", ToastLength.Short).Show();
                         Intent profileActivity = new Intent(this, typeof(ProfileActivity));
                         profileActivity.PutExtra("username", usernamePopup.Text);
+                        profileActivity.PutExtra("gamemode", gameTypeList[gameTypeSpinner.SelectedItemPosition]);
                         StartActivity(profileActivity);
                     }
                     else
