@@ -35,10 +35,14 @@ namespace osu_info
     
             //Make it so if the user name cannot be found return to profile with a Toast telling the error
 
-            //Set user settings
+            //User Profile Data
             FindViewById<TextView>(Resource.Id.textUsername).Text = user.Username;
+            FindViewById<TextView>(Resource.Id.textCurrentLevel).Text = $"Level: {user.Level}⭐";
+            FindViewById<TextView>(Resource.Id.textRankedScore).Text = $"Ranked Score: {user.RankedScore}";
             FindViewById<TextView>(Resource.Id.textCurrentPP).Text = $"{user.PP} pp";
-            FindViewById<TextView>(Resource.Id.textAccuracy).Text = $"Hit Accuracy {user.Accuracy}";
+            FindViewById<TextView>(Resource.Id.textAccuracy).Text = $"Hit Accuracy: {user.Accuracy}%";
+            FindViewById<TextView>(Resource.Id.textPlayCount).Text = $"Play Count: {user.PlayCount}";
+            FindViewById<TextView>(Resource.Id.textTotalScore).Text = $"Total Score: {user.TotalScore}";
             UserIcon = FindViewById<ImageView>(Resource.Id.imageProfileImage);
             CountryIcon = FindViewById<ImageView>(Resource.Id.imageCountry);
 

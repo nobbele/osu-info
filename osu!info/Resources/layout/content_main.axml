@@ -32,12 +32,13 @@
 				<TextView
 					android:text="UserName"
 					android:textAppearance="?android:attr/textAppearanceMedium"
-					android:layout_width="137.5dp"
+					android:layout_width="160.0dp"
 					android:layout_height="match_parent"
 					android:id="@+id/textUsername"
 					android:layout_marginLeft="10.0dp"
 					android:layout_marginTop="6.0dp"
-					android:textColor="#ff000000" />
+					android:textColor="#ff000000"
+					android:layout_marginRight="5.5dp" />
 				<ImageView
 					android:src="@android:drawable/ic_menu_gallery"
 					android:layout_width="wrap_content"
@@ -47,6 +48,22 @@
 				</LinearLayout>
 
 			<TextView
+				android:text="Level"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/textCurrentLevel"
+				android:layout_marginLeft="10.0dp"
+				android:layout_marginTop="6.0dp" />
+			<TextView
+				android:text="Ranked Score"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/textRankedScore"
+				android:layout_marginLeft="10.0dp"
+				android:layout_marginTop="6.0dp" />
+			<TextView
 				android:text="PP"
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="match_parent"
@@ -55,11 +72,27 @@
 				android:layout_marginLeft="10.0dp"
 				android:layout_marginTop="6.0dp" />
 			<TextView
-				android:text="Hit Accuracy"
+				android:text="Accuracy"
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				android:id="@+id/textAccuracy"
+				android:layout_marginLeft="10.0dp"
+				android:layout_marginTop="6.0dp" />
+			<TextView
+				android:text="Play Count"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/textPlayCount"
+				android:layout_marginLeft="10.0dp"
+				android:layout_marginTop="6.0dp" />
+			<TextView
+				android:text="Total Score"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/textTotalScore"
 				android:layout_marginLeft="10.0dp"
 				android:layout_marginTop="6.0dp" />
 
