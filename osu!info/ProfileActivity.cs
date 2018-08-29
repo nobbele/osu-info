@@ -38,6 +38,7 @@ namespace osu_info
             //Set user settings
             FindViewById<TextView>(Resource.Id.textUsername).Text = user.Username;
             FindViewById<TextView>(Resource.Id.textCurrentPP).Text = $"{user.PP} pp";
+            FindViewById<TextView>(Resource.Id.textAccuracy).Text = $"Hit Accuracy {user.Accuracy}";
             UserIcon = FindViewById<ImageView>(Resource.Id.imageProfileImage);
             CountryIcon = FindViewById<ImageView>(Resource.Id.imageCountry);
 

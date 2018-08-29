@@ -54,6 +54,15 @@
 				android:id="@+id/textCurrentPP"
 				android:layout_marginLeft="10.0dp"
 				android:layout_marginTop="6.0dp" />
+			<TextView
+				android:text="Hit Accuracy"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/textAccuracy"
+				android:layout_marginLeft="10.0dp"
+				android:layout_marginTop="6.0dp" />
+
 		</LinearLayout>
 	</ScrollView>
 	<ImageView

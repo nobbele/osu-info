@@ -79,6 +79,7 @@ namespace osu_info
 
             ID = obj.GetString("user_id");
             Username = obj.GetString("username");
+            //AccountDate = obj.GetString("event_date");
             HitAccuracyCount = new HitCounter(obj);
             PlayCount = obj.GetString("playcount");
             RankedScore = obj.GetString("ranked_score");
