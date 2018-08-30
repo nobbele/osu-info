@@ -54,7 +54,7 @@ namespace osu_info
         }
         public enum GameMode
         {
-            Standard, Taiko, CatchTheBeat, Mania
+            Standard, Taiko, Catch, Mania
         }
         public string ID = string.Empty;
         public string Username = string.Empty;
