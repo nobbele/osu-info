@@ -12,6 +12,10 @@ using Android.Widget;
 
 namespace osu_info
 {
+    public enum GameMode
+    {
+        Standard, Taiko, Catch, Mania
+    }
     public class HitCounter
     {
         public enum Accuracy
@@ -51,10 +55,6 @@ namespace osu_info
             if (mode == string.Empty)
                 mode = "standard";
             return (GameMode)Enum.Parse(typeof(GameMode), mode, true);
-        }
-        public enum GameMode
-        {
-            Standard, Taiko, Catch, Mania
         }
         public string ID = string.Empty;
         public string Username = string.Empty;

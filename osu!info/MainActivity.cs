@@ -63,8 +63,7 @@ namespace osu_info
                 aDialog.SetNegativeButton("Search!", delegate 
                 {
                     if(usernamePopup.Text != string.Empty)
-                    {
-                        //GAME TYPE ERROR ON CATCH 
+                    { 
                         //Fill it up with required funtions
                         Toast.MakeText(this, $"Searching for \"{usernamePopup.Text}\" ", ToastLength.Short).Show();
                         Intent profileActivity = new Intent(this, typeof(ProfileActivity));
