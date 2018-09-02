@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using System.Collections.Generic;
 
 namespace osu_info
 {
@@ -119,10 +108,10 @@ namespace osu_info
             Creator = obj.GetString("creator");
             obj.GetString("difficultyrating");
             Difficulty = new Difficulty(obj);
-            HitLength = obj.GetLong("hitlength");
+            HitLength = obj.GetLong("hit_length");
             Source = obj.GetString("source");
-            Genre = (GenreType)obj.GetInt("genre");
-            Language = (LanguageType)obj.GetInt("language");
+            Genre = (GenreType)obj.GetInt("genre_id");
+            Language = (LanguageType)obj.GetInt("language_id");
             Title = obj.GetString("title");
             TotalLength = obj.GetLong("total_length");
             DifficultyName = obj.GetString("version");
@@ -132,7 +121,7 @@ namespace osu_info
             FavoriteCount = obj.GetLong("favourite_count");
             PlayCount = obj.GetLong("playcount");
             PassCount = obj.GetLong("passcount");
-            MaxCombo = obj.GetLong("maxcombo");
+            //MaxCombo = obj.GetLong("max_combo");
         }
     }
 }

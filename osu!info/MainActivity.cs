@@ -80,9 +80,10 @@ namespace osu_info
             }
             if (id == Resource.Id.menu_beatmaps)
             {
-                //Put Functions Here
+                OsuBeatmap beatmap = new OsuBeatmap("1655222");
+                Toast.MakeText(this, $"Searching for \"{beatmap.Artist}\" ", ToastLength.Short).Show();
             }
-            if(id == Resource.Id.menu_news)
+            if (id == Resource.Id.menu_news)
             {
                 //Put Functions Here
             }
