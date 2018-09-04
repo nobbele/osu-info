@@ -15,8 +15,12 @@ namespace osu_info
     [Activity(Label = "BeatmapActivity")]
     public class BeatmapActivity : Activity
     {
+        //Important
         OsuBeatmap currentBeatmap;
         string beatmapID;
+
+        //Other
+        TextView BeatmapTitleText;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -25,10 +29,17 @@ namespace osu_info
 
             beatmapID = Intent.GetStringExtra("beatmapID");
             currentBeatmap = new OsuBeatmap(beatmapID);
+            
+            //UI
+            BeatmapTitleText = FindViewById<TextView>(Resource.Id.beatmapName);
 
-            FindViewById<TextView>(Resource.Id.beatmapName).Text = currentBeatmap.Title;
+            //Other
+            ReloadBeatmap();
+        }
 
-            // Create your application here
+        void ReloadBeatmap()
+        {
+            BeatmapTitleText.Text = currentBeatmap.Title;
         }
     }
 }
