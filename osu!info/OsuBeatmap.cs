@@ -21,7 +21,7 @@ namespace osu_info
     }
     public class OsuBeatmap
     {
-        private Org.Json.JSONObject GetObjectUsingMapId(string id)
+        private static Org.Json.JSONObject GetObjectUsingMapId(string id)
         {
             return OsuApi.Request(
                 "get_beatmaps", new Dictionary<string, string> {
@@ -94,10 +94,9 @@ namespace osu_info
         public long PlayCount;
         public long PassCount;
         public long MaxCombo;
-        public OsuBeatmap(string id)
+        public OsuBeatmap(string id) : this(GetObjectUsingMapId(id)) {}
+        public OsuBeatmap(Org.Json.JSONObject obj)
         {
-            Org.Json.JSONObject obj = GetObjectUsingMapId(id);
-            //Parse it
             Approved = (ApproveState)obj.GetInt("approved");
             ApprovedDate = obj.GetString("approved_date");
             LastUpdate = obj.GetString("last_update");

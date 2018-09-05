@@ -29,6 +29,8 @@ namespace osu_info
 
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
+
+            new OsuBeatmapSet("773801");
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
