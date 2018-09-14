@@ -52,7 +52,7 @@ namespace osu_info
             Other = 6,
             Novelty = 7,
             Hip_Hop = 9,
-            Electroni = 10
+            Electronic = 10
         }
         // 0 = any, 1 = other, 2 = english, 3 = japanese, 4 = chinese, 5 = instrumental, 6 = korean, 7 = french, 8 = german, 9 = swedish, 10 = spanish, 11 = italian
         public enum LanguageType

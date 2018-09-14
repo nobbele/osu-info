@@ -16,8 +16,9 @@ namespace osu_info
     public class BeatmapActivity : Activity
     {
         //Important
-        OsuBeatmap currentBeatmap;
-        string beatmapID;
+        OsuBeatmapSet currentSet;
+        OsuBeatmap currentBeatmap => currentSet.GetDifficulty(selectedDifficulty);
+        string selectedDifficulty;
 
         //Other
         TextView BeatmapTitleText;
@@ -27,8 +28,8 @@ namespace osu_info
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.beatmap_main);
 
-            beatmapID = Intent.GetStringExtra("beatmapID");
-            currentBeatmap = new OsuBeatmap(beatmapID);
+            string setId = Intent.GetStringExtra("beatmapSetId");
+            currentSet = OsuBeatmapSet.CreateFromSetId(setId);
             
             //UI
             BeatmapTitleText = FindViewById<TextView>(Resource.Id.beatmapName);

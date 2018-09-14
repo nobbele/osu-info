@@ -29,8 +29,6 @@ namespace osu_info
 
             FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
-
-            new OsuBeatmapSet("773801");
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -82,12 +80,9 @@ namespace osu_info
             }
             if (id == Resource.Id.menu_beatmaps)
             {
-                string beatmapID = "1655222";
-                OsuBeatmap beatmap = new OsuBeatmap(beatmapID);
-                Toast.MakeText(this, $"Beatmap {beatmap.Title} \n Made By \"{beatmap.Artist}\" ", ToastLength.Short).Show();
-                //Fill it up with required funtions
+                string setId = "1655222";;
                 Intent beatmapActivity = new Intent(this, typeof(BeatmapActivity));
-                beatmapActivity.PutExtra("beatmapID", beatmapID);
+                beatmapActivity.PutExtra("setId", setId);
                 StartActivity(beatmapActivity);
             }
             if (id == Resource.Id.menu_news)
